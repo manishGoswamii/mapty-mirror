@@ -1,0 +1,263 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body
+{
+    padding:1.5rem;    
+    overflow: hidden;
+    font-family:'Manrope', sans-serif;
+}
+
+
+.main
+{   
+    width:100%;
+    height:93vh;
+    display: flex;
+
+    &__workouts
+    {
+        width:34%;
+        background-color: #2D3439;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        .logo
+        {
+            width:25%;
+
+            img
+            {
+                width:100%;
+            }
+        }
+
+        .workout-tiles
+        {
+            min-height:65%;
+            max-height: 65%;
+            width:80%;
+            overflow: auto;
+            &::-webkit-scrollbar
+            {
+                width:0;
+            }
+
+            
+           
+
+        }
+
+        .copyright
+        {   
+            width:75%;
+            color:rgba(255, 255, 255, 0.597);
+            font-size: 0.8rem;
+            line-height:1.2rem;
+            text-align:center;
+            a,a:visited,a:link
+            {
+                color:rgba(255, 255, 255, 0.644);
+            }
+        }
+    }
+
+    &__map-area
+    {
+        width:66%;
+        background-color: #AAAAAA;
+        cursor: pointer;
+    }
+}
+
+//leaflet tip
+.leaflet-popup-tip
+{
+    background-color: #2D3439;
+}
+
+//leaflet popup wrapper
+.leaflet-popup-content-wrapper
+{
+    padding:0;
+
+}
+
+//leaflet-popup-content class,child of leaflet-popup-content-wrapper
+.leaflet-popup-content
+{       
+    margin:0;
+
+
+
+}
+
+//Classes to be inserted using JavaScript
+
+// popup to be used upon markers.
+.popup
+{
+    color:rgba(255, 255, 255, 0.706);
+    background-color: #2D3439;
+    font-size: 1.1rem;
+    max-height: 8vh;
+    padding:0.1rem 1rem;
+    display: flex;
+    align-items: center;
+    border-radius:5px;
+    border-left: 5px solid ;
+    border-color:inherit;
+}
+
+.popup-running
+{
+    border-left: 5px solid #00c46a;
+}
+
+.popup-cycling
+{
+    border-left: 5px solid #FFB545;
+}
+
+//Workout tile class, the tile created when user clicks on map.
+.tile
+{   
+    position: relative;
+    margin-bottom: 1.5rem;
+    height:22%;
+    color:white;
+    background-color: rgb(66,72,77);
+    display: grid;
+    grid-template-areas: "row1 row2"
+                            "row3 row4";
+    display: none;
+    border-radius:5px;
+    padding:0.8rem;
+    transition: transform 500ms, opacity 1.5s;
+    .row
+    {
+        font-weight: 600;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        input,select
+        {
+            width:43%;
+            height:80%;
+            border:none;
+            outline:none;
+            border-radius: 2px;
+            font-size:0.9rem;
+            font-weight: 500;
+            background-color: rgb(214,222,224);
+            padding:0 0.5rem;
+
+            &::placeholder
+            {
+                padding:0 0.5rem;
+            }
+
+            &:focus
+            {
+                background-color: white;
+            }
+        }
+        
+
+    }
+    .row1
+    {   
+        label
+        {
+            width:36%;
+        }
+    
+    }
+    
+    button
+    {   
+        position: absolute;
+        visibility: hidden;
+    }
+
+}
+
+//Workout tile-final class, the tile created after user provides the valid info to the tile created when user clicks on map.
+.tile-final
+{
+    height:22%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgb(66,72,77);
+    position: relative;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding:1rem 2rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+
+    .line
+    {
+        width:1.2%;
+        height:100%;
+        position:absolute;
+        left:0;
+
+    }
+    .line-running
+    {
+        background-color: rgb(0,196,106);
+    }
+    .line-cycling
+    {
+        border-left: 5px solid #FFB545;
+    }
+
+    .heading
+    {
+        font-size:1.1rem;
+        font-weight: 600;
+
+    }
+    .info
+    {
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: space-between;
+
+        .unit
+        {
+            font-size: 0.7rem;
+            color:rgba(255, 255, 255, 0.727);
+        }
+    }
+}
+
+.invalid-input
+{
+    border:2px solid rgba(255, 0, 0, 0.698) !important;
+
+}
+
+
+
+
+//hiding form.
+.hidden
+{   
+    transform: translateY(-10rem);
+    opacity: 0;
+}
+
+
+.row-hidden
+{
+   display:none !important;
+}
+

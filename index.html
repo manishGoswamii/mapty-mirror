@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>Workout App</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    
+    <link href="scss/main.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <main class="main">
+        <section class="main__workouts">
+            <div class="logo">
+                <img src="img/logo.png" alt="logo">
+            </div>
+            <div class="workout-tiles">
+                <form action="" class="tile hidden">
+                    <div class="row row1">
+                        <label for="type">Type</label> 
+                        <select name="type" id="type">
+                            <option value="r">Running</option>
+                            <option value="c">Cycling</option>
+                        </select>
+                    </div>
+                    <div class="row row2">
+                        <label for="distance">Distance</label> 
+                        <input type="text" id="distance" name="distance" placeholder="km" autocomplete="off"/>
+                    </div>
+                    
+                    <div class="row row3">
+                        <label for="duration">Duration</label> 
+                        <input type="text" id="duration" name="duration" placeholder="min" autocomplete="off"/>
+                    </div>
+                    <div class="row row4">
+                        <label for="cadence">Cadence</label> 
+                        <input type="text" id="cadence" name="cadence" placeholder="min/step" autocomplete="off"/>
+                    
+                    </div>
+
+                    <div class="row row5 row-hidden">
+                        <label for="elevation">Elevation</label> 
+                        <input type="text" id="elevation" name="elevation" placeholder="meters" autocomplete="off"/>
+                    </div>
+                    <button type="submit" class="ok">OK</button>
+                </form>
+                
+            </div>
+
+            
+            <div class="copyright">
+                &copy; Copyright by <a href="https://github.com/manishGoswamii">Mahesh Goswami</a>. Use for learning or your portfolio. Don't use to teach. Don't claim as yours.
+            </div>
+        </section>
+        <section id= "map-area" class="main__map-area">
+         
+        </section>
+    </main>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="script.js"></script>
+    <script src="Workout.js"></script>
+
+</body>
+</html>
